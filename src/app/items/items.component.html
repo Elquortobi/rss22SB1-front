@@ -1,0 +1,30 @@
+<button pButton pRipple type="button" label="Ajouter Item +" class="p-button-rounded" (click)="addItem()"
+        style="position: absolute;right: 0;"></button>
+<br>
+<br>
+<br>
+<p-table [value]="items" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Guid</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+    <tr>
+      <td>{{item?.guid}}</td>
+      <td>{{item?.title}}</td>
+      <td>{{item?.published}}</td>
+      <td style="align-content: center">
+        <i class="pi pi-eye" (click)="viewItem(item.guid)"></i>
+        <i class="pi pi-trash" (click)="deleteItem(item.guid)"></i>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-dialog header="Title" [(visible)]="display">
+  {{item.title}}
+</p-dialog>
+<p-toast></p-toast>

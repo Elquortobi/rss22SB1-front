@@ -1,0 +1,107 @@
+<p style="font-weight: bold;font-size: 30px">Ajout d'un item</p>
+<div style="text-align: center;">
+  <form [formGroup]="itemForm" style="text-align: initial;">
+    <div class="fluid grid" style="display: flex">
+      <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+            <input id="title" type="text" formControlName="title" pInputText style="width: 400px;
+               ">
+            <label for="title">Titre</label>
+            </span>
+      </div>
+      <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+            <input class="champInput" id="categorie" type="text" formControlName="categorie" pInputText
+                   style="width: 400px;">
+            <label for="categorie">Catégorie</label>
+            </span>
+      </div>
+      <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+               <p-calendar id="date" dateFormat="mm-dd-yy" formControlName="date"></p-calendar>
+               <label>Date</label>
+            </span>
+      </div>
+    </div>
+    <p style="font-weight: bold;font-size: 20px">Image</p>
+    <div class="fluid grid" style="display: flex">
+      <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+            <input id="imageUrl" type="text" formControlName="imageUrl" pInputText style="width: 400px;
+               ">
+            <label for="title">URL</label>
+            </span>
+      </div>
+      <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <p-dropdown [options]="imageTypes" optionLabel="name" optionValue="name" id="imageType" type="text"
+                          formControlName="imageType" placeholder="Sélectionner type image"></p-dropdown>
+            </span>
+      </div>
+      <div class="field col-12 md:col-4">
+             <span class="p-float-label">
+            <input class="champInput" id="imageTaille" type="number" formControlName="imageTaille" pInputText
+                   style="width: 400px">
+            <label for="imageTaille">Taille</label>
+            </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+    <textarea id="imageAlt" rows="5" cols="30" pInputTextarea formControlName="imageAlt"></textarea>
+    <label for="imageAlt">Description</label>
+</span>
+      </div>
+    </div>
+    <p style="font-weight: bold;font-size: 20px">Contenu</p>
+    <div class="fluid grid" style="display: flex">
+      <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+            <input class="champInput" id="contentUrl" type="text" formControlName="contentUrl" pInputText
+                   style="width: 400px">
+            <label for="contentUrl">URL</label>
+            </span>
+      </div>
+      <div class="field col-12 md:col-4">
+             <span class="p-float-label">
+                <p-dropdown [options]="contentTypes" optionLabel="name" optionValue="name" id="contentType" type="text"
+                            formControlName="contentType" placeholder="Sélectionner type contenu"></p-dropdown>
+
+            </span>
+      </div>
+      <div class="field col-12 md:col-4">
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+    <textarea id="contentValue" rows="5" cols="30" pInputTextarea formControlName="contentValue"></textarea>
+    <label for="contentValue">Valeur</label>
+</span>
+      </div>
+    </div>
+    <p style="font-weight: bold;font-size: 20px">Auteur</p>
+    <div class="fluid grid" style="display: flex">
+      <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+            <input id="authorName" type="text" formControlName="authorName" pInputText style="width: 400px;
+               ">
+            <label for="authorName">Nom Complet</label>
+            </span>
+      </div>
+      <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+            <input class="champInput" id="authorEmail" type="email" formControlName="authorEmail" pInputText
+                   style="width: 400px;">
+            <label for="authorEmail">Email</label>
+            </span>
+      </div>
+      <div class="field col-12 md:col-4">
+<span class="p-float-label">
+            <input class="champInput" id="authorUri" type="email" formControlName="authorUri" pInputText
+                   style="width: 400px;">
+            <label for="authorUri">Email</label>
+            </span>
+      </div>
+    </div>
+  </form>
+  <button label="Ajouter" pButton class="marginBtn" (click)="addItem()"></button>
+</div>
+<p-toast></p-toast>
